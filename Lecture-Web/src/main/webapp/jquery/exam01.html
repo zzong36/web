@@ -12,6 +12,12 @@
 $(document).ready(function(){
     alert('hello');
 });
+
+// 아래도 실행된다. why? but 이 순서대로 뜬다는 보장은 없다.
+$(document).ready(function(){
+    alert('ready');
+});
+
 </script>
 </head>
 <body>
