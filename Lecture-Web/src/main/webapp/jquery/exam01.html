@@ -8,16 +8,22 @@
 <!-- <script src="/Lecture-Web/jquery/js/jquery-3.6.0.min.js"></script>  -->
 <!-- 상대경로 -->
 <script src="./js/jquery-3.6.0.min.js"></script>
+<!-- CDN -->
+
 <script type="text/javascript">
 $(document).ready(function(){
     alert('hello');
 });
 
-// 아래도 실행된다. why? but 이 순서대로 뜬다는 보장은 없다.
+/* 아래도 실행된다. why? but 이 순서대로 뜬다는 보장은 없다.*/
 $(document).ready(function(){
     alert('ready');
 });
 
+/*   $(document).ready는 아래처럼 간편하게 써도 된다*/
+$(function(){
+    alert('ready2')
+});
 </script>
 </head>
 <body>
