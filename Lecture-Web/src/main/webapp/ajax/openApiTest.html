@@ -50,27 +50,29 @@ function callback(result){
 		let movieData = list[i]
 		let rank = movieData.rank
 		let name = movieData.movieNm
+		let code = movieData.movieCd
 		let audiCnt = movieData.audiCnt
 		
 		$('#searchResult').append('<h4>' + rank + '위</h4>')
 		$('#searchResult').append(`<strong>${name}</strong>(${audiCnt}명)`)
-		$('#searchResult').append('<br><button id="btn01">상세보기</button>') 
-		$('#searchResult').append('<div id=showMovie><div/>') 
+		$('#searchResult').append(`<br><button id="${code}">상세보기</button>`) 
+		$('#searchResult').append('<div id="showMovie"><div/>') 
+		$('#searchResult').append(`<div id="show${code}"><div/>`) 
 		$('#searchResult').append('<hr>') 
 		
 
 	}
 	
 	/* document ready를 사용한다면 아직 읽어오지 않았기 때문에 실행이 안 되므로 on을 써야 함 */
-	$(document).on('click', '#btn01', function(){
+	$(document).on('click', '#searchResult > button', function(){
 		/* alert('!!!') */
-		
+		let id =$(this).attr('id')
 		$.ajax({
 		type: 'get'
 		, url: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json'
 		, data:{
 			key: 'e87d77f873f4032f74e4cad2845e6005'
-			, movieCd: '20112207'
+			, movieCd: id
 		}, success:callback2
 		, error: function(){
 			alert('movieCd 못가져옴')
@@ -85,14 +87,15 @@ function callback2(result){
 	let list = result.movieInfoResult.movieInfo
 	
 	let movieData = list
+	let code = movieData.movieCd
 	let directors = movieData.directors 
 	let genres = movieData.genres
 	let actors = movieData.actors
 	
-	$('#showMovie').append(`감독: ${directors[0].peopleNm}<br>`)
-	$('#showMovie').append(`장르: ${genres[0].genreNm}<br>`)
-	for(let i = 0; i < actors.length; i++){
-	$('#showMovie').append(`dd: ${actors[i].peopleNm}<br>`)		
+	$(`#show${code}`).append(`감독: ${directors[0].peopleNm}<br>`)
+	$(`#show${code}`).append(`장르: ${genres[0].genreNm}<br>`)
+	for(let i = 0; i < actors.length; i++){	
+	$(`#show${code}`).append(`배우 ${i+1}: ${actors[i].peopleNm}<br>`)		
 	}
 	
 }
