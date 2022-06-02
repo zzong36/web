@@ -56,8 +56,7 @@ function callback(result){
 		$('#searchResult').append('<h4>' + rank + '위</h4>')
 		$('#searchResult').append(`<strong>${name}</strong>(${audiCnt}명)`)
 		$('#searchResult').append(`<br><button id="${code}">상세보기</button>`) 
-		$('#searchResult').append('<div id="showMovie"><div/>') 
-		$('#searchResult').append(`<div id="show${code}"><div/>`) 
+		$('#searchResult').append(`<div id="show${code}" style="display: none"><div/>`) 
 		$('#searchResult').append('<hr>') 
 		
 
@@ -79,6 +78,7 @@ function callback(result){
 		}
 	})
 	})
+	
 }
  
 function callback2(result){
@@ -92,11 +92,14 @@ function callback2(result){
 	let genres = movieData.genres
 	let actors = movieData.actors
 	
+	$(`#show${code}`).empty()
 	$(`#show${code}`).append(`감독: ${directors[0].peopleNm}<br>`)
 	$(`#show${code}`).append(`장르: ${genres[0].genreNm}<br>`)
 	for(let i = 0; i < actors.length; i++){	
 	$(`#show${code}`).append(`배우 ${i+1}: ${actors[i].peopleNm}<br>`)		
 	}
+	
+	$(`#show${code}`).toggle()
 	
 }
  
