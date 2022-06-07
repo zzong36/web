@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>개인정보 입력</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="form-wrap">
+            <h1>개인정보 입력</h1>
+            <form action="/Lecture-Web/pinfoResult">
+                <div class="form-group form-write">
+                    <label for="name">이름</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                
+                <div class="form-group form-write">
+                    <label for="id">아이디</label>
+                    <input type="text" name="id" id="id">
+                </div>
+                
+                <div class="form-group form-write">
+                    <label for="password">비밀번호</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">성별</label>
+                    <input type="radio" name="gender" value="남서">남
+                    <input type="radio" name="gender" value="여성">여
+                </div>
+                
+                <div class="form-group">
+                    <label for="mail">메일 수신 여부</label>
+                    <input type="checkbox" name="mail1" value="받음"> 공지 메일
+                    <input type="checkbox" name="mail2" value="받음"> 광고 메일
+                    <input type="checkbox" name="mail3" value="받음"> 배송 확인 메일
+                </div>
+                
+                <div class="form-group">
+                    <label for="job">직업</label>
+                    <select name="job" id="job">
+                        <option value="회사원">회사원</option>
+                        <option value="학생">학생</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <br>
+                <button>취소</button>
+                <button type="submit" class="btn">확인</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -36,16 +36,27 @@
   </servlet-mapping>
 
   <!-- ExamServlet 관련 -->
-  <servlet>
+  <!-- 하지만 설정하지 않아도 작동가능? -->
+ <!-- <servlet>
   <servlet-name>exam</servlet-name>
   <servlet-class>kr.ac.kopo.servlet.ExamServlet</servlet-class>
   </servlet>
 
    <servlet-mapping>
   <servlet-name>exam</servlet-name>
-  <url-pattern>/exam</url-pattern>
+  <url-pattern>/servlet/exam</url-pattern>
   </servlet-mapping>
+   -->
+  <!-- HomeworkServlet 관련 -->
+ <servlet>
+  <servlet-name>pinfoResult</servlet-name>
+  <servlet-class>kr.ac.kopo.servlet.HomeworkServlet</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+  <servlet-name>pinfoResult</servlet-name>
+  <url-pattern>/pinfoResult</url-pattern>
+  </servlet-mapping>
   
   
   <welcome-file-list>

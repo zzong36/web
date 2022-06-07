@@ -1,0 +1,54 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #93B5C6;
+    color: #666;
+    line-height: 1.8;
+}
+
+#container {
+    margin: 30px auto;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.form-wrap {
+    background: #fff;
+    padding: 15px 25px;
+    color: #333;
+}
+
+.form-wrap h1 {
+    text-align: center;
+    font-size: 37px;
+}
+
+.form-wrap,
+.form-group {
+    margin-top: 15px;
+}
+
+.form-wrap .form-group label {
+    font-size: 17px;
+    display: block;
+    color: #666;
+}
+
+.form-wrap .form-write input {
+    width: 100%;
+    padding: 13px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.form-wrap .form-group #job {
+    font-size: 15px;
+    display: block;
+    color: #666;
+}
