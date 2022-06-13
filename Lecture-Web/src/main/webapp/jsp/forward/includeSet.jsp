@@ -9,8 +9,11 @@
 </head>
 <body>
 	<h2>결과화면</h2>
-	<c:if test="${ param.id == admin }">
+	<c:if test="${ param.id == 'admin' }">
 		<jsp:include page="admin.jsp" />
+	</c:if>
+	<c:if test="${ param.id ne 'admin' }">
+		<jsp:include page="user.jsp" />
 	</c:if>
 </body>
 </html>

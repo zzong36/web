@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Forward Test</title>
+<title>Send Redirect Test</title>
 </head>
 <body>
-	<form action="forwardSet.jsp">
+	<form action="sendRedirectSet.jsp">
 		id: <input type="text" name="id"> <input type="submit"
 			value="전송">
 	</form>
